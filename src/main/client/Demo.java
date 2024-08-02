@@ -19,14 +19,16 @@ public class Demo {
     public static ArrayList<Die> redo(ArrayList<Die> die){
         Scanner scanny = new Scanner(System.in);
         ArrayList<Die> reroll = new ArrayList<>();
+        ArrayList<Integer> used = new ArrayList<>();
         System.out.println("Please enter the number of the die you would like to reroll");
         System.out.println("Enter 0 to quit.");
         int input = scanny.nextInt();
-        while(input < 0 && input > 5){
+        while(input < 0 && input > 5 && ! used.contains(input)){
             System.out.println("Please enter a valid  number.");
             input = scanny.nextInt();
         }
         while(input != 0){
+            used.add(input);
             reroll.add(die.get(input - 1));
             die.remove(input - 1);
 
