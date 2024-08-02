@@ -13,6 +13,7 @@ public class Demo {
             Die.readDie(current);
             current = redo(current);
         }
+        Die.readDie(current);
     }
 
     public static ArrayList<Die> redo(ArrayList<Die> die){
@@ -27,13 +28,15 @@ public class Demo {
         }
         while(input != 0){
             reroll.add(die.get(input - 1));
-            die.remove(input -1);
+            die.remove(input - 1);
 
             System.out.println("Please enter the number of the die you would like to reroll");
             System.out.println("Enter 0 to quit.");
             input = scanny.nextInt();
         }
         Die.rollDie(reroll);
+
+
         for (Die element : reroll) {
             die.add(element);
         }
