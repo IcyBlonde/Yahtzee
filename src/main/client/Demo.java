@@ -25,7 +25,7 @@ public class Demo {
         int input = -1;
         do {
             try {
-                System.out.println("Please enter the number of the die you would like to reroll (1-5).");
+                System.out.println("\nPlease enter the number of the die you would like to reroll (1-5).");
                 System.out.println("Enter 0 to quit.\n");
                 input = scanny.nextInt();
     
