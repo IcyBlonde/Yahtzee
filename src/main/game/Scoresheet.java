@@ -4,11 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Scoresheet {
-    private Map<String, Integer> scores = new HashMap<>();
-    private Map<String, Integer> setValues = new HashMap<>();
+    private Map<String, Integer> scores;
+    private Map<String, Integer> setValues;
 
     public Scoresheet() {
         scores = new HashMap<>();
+        setValues = new HashMap<>();
         scores.put("1s", -1);
         scores.put("2s", -1);
         scores.put("3s", -1);
@@ -30,7 +31,7 @@ public class Scoresheet {
     }
 
     public boolean used(String key){
-        if(scores.get(key) == null){
+        if(scores.get(key) == -1){
             return false;
         } else {
             return true;
