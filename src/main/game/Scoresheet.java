@@ -27,9 +27,15 @@ public class Scoresheet {
         scores.put(playerName, 0);
     }
 
-    public void updateScore(String playerName, int points) {
+    public void updateScore(String playerName, String category, int points) {
         if (scores.containsKey(playerName)) {
-            scores.put(playerName, scores.get(playerName) + points);
+            try {
+                if (scores.get(category) != null) {
+                   scores.put(category, points); 
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid Category");
+            } 
         } else {
             System.out.println("Player not found.");
         }
