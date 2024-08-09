@@ -6,9 +6,8 @@ import java.util.Map;
 public class Scoresheet {
     private static Map<String, Integer> scores;
 
-    public Scoresheet(String name) {
+    public Scoresheet() {
         scores = new HashMap<>();
-        scores.put(name, 0);
         scores.put("1s", null);
         scores.put("2s", null);
         scores.put("3s", null);
@@ -24,21 +23,11 @@ public class Scoresheet {
         scores.put("Chance", null);
     }
 
-    public static boolean updateScore(String playerName, String category, int points) {
-        if (scores.containsKey(playerName)) {
-            try {
-                if (scores.get(category) != null) {
-                   scores.put(category, points); 
-                   return true;
-                }
-            } catch (Exception e) {
-                System.out.println("Invalid Category");
-                return false;
-            } 
-        } else {
-            System.out.println("Player not found.");
+    public static boolean used(String key){
+        if(scores.get(key) == null){
             return false;
+        } else {
+            return true;
         }
-        return false;
     }
 }

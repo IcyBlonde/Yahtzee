@@ -21,7 +21,7 @@ public class Round {
 
     public static void makeSheets(ArrayList<String> players, Map<String, Scoresheet> sheets){
         for(int i = 0; i < players.size(); i++){
-            sheets.put("sheet" + (i +1), new Scoresheet(players.get(i)));
+            sheets.put(players.get(i), new Scoresheet());
         }
     }
 }
