@@ -39,6 +39,11 @@ public class Scoresheet {
     }
 
     public void updateCard(String key, int value){
+        if (!scores.containsKey(key)) {
+            System.out.println("Invalid key: " + key);
+            return;
+        }
+
         try {
             if (!used(key) && !setValue(key)) {
                 scores.put(key, value);
