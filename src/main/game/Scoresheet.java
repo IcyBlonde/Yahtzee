@@ -39,11 +39,7 @@ public class Scoresheet {
     }
 
     public boolean setValue(String key){
-        if (key.equals("Full house") || key.equals("Small straight") || key.equals("Large straight") || key.equals("Yahtzee")) {
-            return true;
-        } else {
-            return false;
-        }
+        return setValues.containsKey(key);
     }
 
     public void updateCard(String key, int value){
