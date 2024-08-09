@@ -4,10 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Scoresheet {
-    private Map<String, Integer> scores;
+    private static Map<String, Integer> scores;
 
-    public Scoresheet() {
+    public Scoresheet(String name) {
         scores = new HashMap<>();
+        scores.put(name, 0);
         scores.put("1s", null);
         scores.put("2s", null);
         scores.put("3s", null);
@@ -23,21 +24,21 @@ public class Scoresheet {
         scores.put("Chance", null);
     }
 
-    public void addPlayer(String playerName) {
-        scores.put(playerName, 0);
-    }
-
-    public void updateScore(String playerName, String category, int points) {
+    public static boolean updateScore(String playerName, String category, int points) {
         if (scores.containsKey(playerName)) {
             try {
                 if (scores.get(category) != null) {
                    scores.put(category, points); 
+                   return true;
                 }
             } catch (Exception e) {
                 System.out.println("Invalid Category");
+                return false;
             } 
         } else {
             System.out.println("Player not found.");
+            return false;
         }
+        return false;
     }
 }
