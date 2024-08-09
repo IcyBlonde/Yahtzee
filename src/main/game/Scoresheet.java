@@ -31,11 +31,7 @@ public class Scoresheet {
     }
 
     public boolean used(String key){
-        if(scores.get(key) == -1){
-            return false;
-        } else {
-            return true;
-        }
+        return scores.get(key) != -1;
     }
 
     public boolean setValue(String key){
