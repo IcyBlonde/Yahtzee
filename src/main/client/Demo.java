@@ -15,14 +15,14 @@ public class Demo {
     public static void main(String[] args){
         Yahtzee = new JFrame();
         Yahtzee.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Yahtzee.setSize(500, 500);
+        Yahtzee.setSize(300, 150);
         playerSelect = new JPanel();
         Yahtzee.add(playerSelect);
         intro = new JLabel("Input Player Name Then Done");
         playerSelect.add(intro);
-        name = new JTextField();
+        name = new JTextField(20);
         playerSelect.add(name);
-        next = new JButton("Next");
+        next = new JButton("Next Player");
         done = new JButton("Done");
         playerSelect.add(next);
         playerSelect.add(done);
